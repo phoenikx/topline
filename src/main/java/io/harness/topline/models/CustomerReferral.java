@@ -18,5 +18,5 @@ public class CustomerReferral {
     private Set<String> followUps;
     private Set<PointOfContact> pointOfContacts;
     @Indexed private String referrer;
-    ReferralStatus status;
+    @Builder.Default ReferralStatus status=ReferralStatus.INITIATED;
 }

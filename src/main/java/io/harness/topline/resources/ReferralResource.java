@@ -4,14 +4,12 @@ import io.harness.topline.UserContext;
 import io.harness.topline.models.CustomerReferral;
 import io.harness.topline.services.ReferralService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("customer-referrals")
 public class ReferralResource {
     private final ReferralService referralService;
 
