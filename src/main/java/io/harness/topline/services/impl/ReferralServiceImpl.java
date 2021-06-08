@@ -3,6 +3,7 @@ package io.harness.topline.services.impl;
 import io.harness.topline.UserContext;
 import io.harness.topline.exceptions.InvalidRequestException;
 import io.harness.topline.models.CustomerReferral;
+import io.harness.topline.models.ReferralStatus;
 import io.harness.topline.models.User;
 import io.harness.topline.repositories.mongo.ReferralRepository;
 import io.harness.topline.repositories.mongo.UserRepository;
@@ -47,5 +48,16 @@ public class ReferralServiceImpl implements ReferralService {
           email, Sort.by(Sort.Direction.DESC, "createdAt")));
     }
     return referrals;
+  }
+
+  @Override
+  public CustomerReferral updateStatus(String id,
+                                       ReferralStatus referralStatus) {
+    // TODO: check if user has access here
+    CustomerReferral customerReferral =
+        referralRepository.findById(id).orElseThrow(
+            () -> new InvalidRequestException("No such referral found."));
+    customerReferral.setStatus(referralStatus);
+    return referralRepository.save(customerReferral);
   }
 }
