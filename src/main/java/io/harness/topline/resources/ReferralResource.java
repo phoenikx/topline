@@ -2,7 +2,7 @@ package io.harness.topline.resources;
 
 import io.harness.topline.UserContext;
 import io.harness.topline.models.CustomerReferral;
-import io.harness.topline.services.ReferralService;
+import io.harness.topline.services.api.ReferralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

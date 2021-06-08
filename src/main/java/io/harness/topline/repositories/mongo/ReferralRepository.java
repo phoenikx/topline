@@ -1,4 +1,4 @@
-package io.harness.topline.repositories;
+package io.harness.topline.repositories.mongo;
 
 import io.harness.topline.models.CustomerReferral;
 import org.springframework.data.domain.Sort;

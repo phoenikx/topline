@@ -1,7 +1,7 @@
 package io.harness.topline;
 
 import io.harness.topline.models.User;
-import io.harness.topline.repositories.UserRepository;
+import io.harness.topline.repositories.mongo.UserRepository;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 
