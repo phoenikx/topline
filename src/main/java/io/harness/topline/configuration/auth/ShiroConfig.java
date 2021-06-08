@@ -62,8 +62,10 @@ public class ShiroConfig {
         new DefaultShiroFilterChainDefinition();
     chainDefinition.addPathDefinition("/error", "anon");
     chainDefinition.addPathDefinition("/v3/api-docs", "anon");
+    chainDefinition.addPathDefinition("/v3/api-docs/*", "anon");
     chainDefinition.addPathDefinition("/v3/api-docs.yaml", "anon");
     chainDefinition.addPathDefinition("/swagger-ui.html", "anon");
+    chainDefinition.addPathDefinition("/swagger-ui/*", "anon");
     chainDefinition.addPathDefinition("/webjars/**", "anon");
     chainDefinition.addPathDefinition("/auth/oauth/**", "anon");
     chainDefinition.addPathDefinition("/health", "anon");
