@@ -14,7 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("users")
 public class UserResource {
-  @Autowired private UserService userService;
+  private final UserService userService;
+
+  @Autowired
+  public UserResource(UserService userService) {
+    this.userService = userService;
+  }
 
   @GetMapping("/admin")
   public List<User> getAdmins() {
