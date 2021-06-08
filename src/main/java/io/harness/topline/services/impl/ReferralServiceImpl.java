@@ -1,16 +1,18 @@
-package io.harness.topline.services;
+package io.harness.topline.services.impl;
 
 import io.harness.topline.UserContext;
 import io.harness.topline.exceptions.InvalidRequestException;
 import io.harness.topline.models.CustomerReferral;
 import io.harness.topline.models.User;
-import io.harness.topline.repositories.ReferralRepository;
-import io.harness.topline.repositories.UserRepository;
-import java.util.ArrayList;
-import java.util.List;
+import io.harness.topline.repositories.mongo.ReferralRepository;
+import io.harness.topline.repositories.mongo.UserRepository;
+import io.harness.topline.services.api.ReferralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ReferralServiceImpl implements ReferralService {

@@ -1,4 +1,4 @@
-package io.harness.topline.services;
+package io.harness.topline.services.api;
 
 import io.harness.topline.models.CustomerReferral;
 

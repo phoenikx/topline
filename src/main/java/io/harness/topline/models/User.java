@@ -15,6 +15,8 @@ public class User {
     @Indexed(unique = true) private String email;
     private String profilePicture;
     private Boolean admin;
+    private boolean isActive;
+    private String principal;
 
     public boolean isAdmin() {
         return Boolean.TRUE.equals(admin);
