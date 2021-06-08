@@ -19,5 +19,5 @@ public interface UserDao {
 
   Set<User> saveAll(Set<User> users);
 
-  Set<User> getUsers(boolean isActive);
+  Set<User> getUsers(boolean isActive, boolean admin);
 }

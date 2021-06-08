@@ -18,5 +18,5 @@ public interface UserRepository extends MongoRepository<User, String> {
   Set<User> findAllByPrincipalAndIsActive(Set<String> principalSet,
                                           boolean isActive);
 
-  @Query("{'isActive': ?0}") Set<User> findAllByIsActive(boolean isActive);
+  @Query("{'isActive': ?0, 'admin': ?1}") Set<User> findAllByIsActive(boolean isActive, boolean admin);
 }

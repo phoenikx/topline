@@ -21,5 +21,5 @@ public interface UserService {
 
   Set<User> getUsersByPrincipal(Set<String> principalSet);
 
-  Set<User> getUsers(boolean isActive);
+  Set<User> getUsers(boolean isActive, boolean admin);
 }

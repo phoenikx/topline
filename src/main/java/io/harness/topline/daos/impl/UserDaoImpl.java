@@ -42,7 +42,7 @@ public class UserDaoImpl implements UserDao {
   }
 
   @Override
-  public Set<User> getUsers(boolean isActive) {
-    return userRepository.findAllByIsActive(isActive);
+  public Set<User> getUsers(boolean isActive, boolean admin) {
+    return userRepository.findAllByIsActive(isActive, admin);
   }
 }

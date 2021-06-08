@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public Set<User> getUsers(boolean isActive) {
-    return userDao.getUsers(isActive);
+  public Set<User> getUsers(boolean isActive, boolean admin) {
+    return userDao.getUsers(isActive, admin);
   }
 }
