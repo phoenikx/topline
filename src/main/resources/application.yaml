@@ -1,6 +1,0 @@
-logging:
-  level:
-    web: debug
-
-mongo:
-  uri: mongodb://localhost:27017

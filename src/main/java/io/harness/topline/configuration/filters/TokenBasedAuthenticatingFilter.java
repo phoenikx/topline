@@ -1,19 +1,24 @@
 package io.harness.topline.configuration.filters;
 
+import com.google.common.collect.ImmutableMap;
 import io.harness.topline.models.BearerToken;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
+import org.apache.shiro.web.util.WebUtils;
+import org.slf4j.MDC;
+import org.springframework.util.StringUtils;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
-import org.apache.shiro.web.util.WebUtils;
-import org.springframework.util.StringUtils;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 @Getter
@@ -29,9 +34,13 @@ public class TokenBasedAuthenticatingFilter extends AuthenticatingFilter {
     boolean authenticated = executeLogin(request, response);
 
     // Return 401 if authentication failed
-    if (!authenticated)
+    if (!authenticated) {
       WebUtils.toHttp(response).sendError(HttpServletResponse.SC_UNAUTHORIZED,
-                                          "Invalid credentials");
+              "Invalid credentials");
+    } else {
+      Map<String, String> context = ImmutableMap.<String, String>builder().put("email", (String) SecurityUtils.getSubject().getPrincipals().getPrimaryPrincipal()).build();
+      MDC.setContextMap(context);
+    }
     return authenticated;
   }
 

@@ -21,9 +21,9 @@ oauth:
     scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
     accessType: "offline"
     responseType: "code"
-    clientId: "778566137835-4i6bsjd75h0pv4ciutli6dosgjhu4eo8.apps.googleusercontent.com"
-    clientSecret: "dummy"
-    redirectUrl: "https://localhost:4000/oauth/google/callback"
+    clientId: "1030992978228-d7924s1br83rk4pb7h39qi7gaficcu16.apps.googleusercontent.com"
+    clientSecret: "z4QdziOqbw1EulQ8fB8hY6TY"
+    redirectUrl: "http://localhost:3000/ui/postlogin"
     profileUrl: "https://www.googleapis.com/userinfo/v2/me"
     tokenUrl: "https://oauth2.googleapis.com/token"
   linkedin:
